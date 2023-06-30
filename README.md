@@ -20,7 +20,8 @@
 <hr>
 
 ## 🐧 Demo
-![Alt Text](https://s11.gifyu.com/images/SQ57S.gif)
+
+[![Watch the video](https://img.youtube.com/vi/a1p-xpK8Oi4/default.jpg)](https://youtu.be/a1p-xpK8Oi4)
 
 
 <hr>
