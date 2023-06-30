@@ -6,10 +6,17 @@
 
 <div align="center">
   Gatelinks is a marketplace platform designed for selling images, videos, PDFs, and links. It provides a user-friendly interface for creators and businesses to monetize their digital content by offering it for sale to a wider audience. Gatelinks empowers content creators to showcase their work and connect with potential buyers, while providing a seamless purchasing experience for customers.
+  <p></p>
   <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square" target="_blank">
+    <img alt="contributors" src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square" />
+  </a>
+  <a href="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" target="_blank">
+    <img alt="contributors" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
   </a>
   <a href="https://twitter.com/kiemTran_dev" target="_blank">
     <img alt="Twitter: kiemTran\_dev" src="https://img.shields.io/twitter/follow/kiemTran\_dev.svg?style=social" />
@@ -20,8 +27,12 @@
 <hr>
 
 ## 🐧 Demo
-
-[![Watch the video](https://img.youtube.com/vi/a1p-xpK8Oi4/default.jpg)](https://youtu.be/a1p-xpK8Oi4)
+[Video demo](https://youtu.be/a1p-xpK8Oi4)
+<div align="center">
+  <a href="https://youtu.be/a1p-xpK8Oi4" target="_blank">
+    <img alt="video-demo" src="https://res.cloudinary.com/drh6sa2x5/image/upload/v1688126812/Screen_Shot_2023-06-30_at_19.06.03_ftvnvh.png" />
+  </a>
+</div>
 
 
 <hr>
