@@ -3,7 +3,6 @@ import { candypay } from "../../helpers";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { items } = req.body;
-  console.log(items);
   
 	try {
 		const response = await candypay.session.create({
