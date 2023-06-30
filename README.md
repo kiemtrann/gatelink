@@ -30,7 +30,7 @@
 
 To run Gatelinks locally, follow these steps:
 
-1. Clone the repository: git clone https://github.com/VanKiem-Tran/gatelink.git
+1. Clone the repository: `git clone https://github.com/VanKiem-Tran/gatelink.git`
 
 2. Install dependencies: `cd gatelinks` and `npm install`
 
