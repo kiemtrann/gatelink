@@ -1,5 +1,3 @@
-import * as admin from "firebase-admin";
-import { ServiceAccount } from "firebase-admin";
 import { buffer } from "micro";
 import { NextApiRequest, NextApiResponse } from "next";
 

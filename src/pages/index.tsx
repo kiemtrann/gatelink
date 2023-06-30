@@ -6,6 +6,8 @@ import Banner from "../components/Banner";
 import Header from "../components/Header";
 import ProductFeed from "../components/ProductFeed";
 
+import items from '../pages/api/items.json'
+
 type Props = {
   products: IProduct[];
 };
@@ -15,7 +17,7 @@ const Home = ({ products }: Props) => {
   return (
     <div className="bg-gray-100">
       <Head>
-        <title>Fast Marketplace</title>
+        <title>Gatelinks</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Header */}
@@ -35,24 +37,21 @@ export default Home;
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const products = await fetch("https://fakestoreapi.com/products").then(
-    (res) => res.json()
-  );
   
   // Get user logged in credentials
   const session: ISession | null = await getSession(context);
   if (!session) {
     return {
-      props: {
-        products,
-      },
-    };
+			props: {
+				products: items,
+			},
+		};
   }
 
 
   return {
     props: {
-      products,
+      products: items,
       session,
     },
   };

@@ -1,8 +1,6 @@
-import { collection, doc, getDocs, orderBy, query } from "firebase/firestore";
 import moment from "moment";
 import { GetServerSidePropsContext } from "next";
 import { getSession, useSession } from "next-auth/react";
-import db from "../../firebase";
 import { IOrder, ISession } from "../../typings";
 import Header from "../components/Header";
 import Order from "../components/Order";

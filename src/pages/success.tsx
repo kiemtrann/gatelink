@@ -1,31 +1,56 @@
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
-import { useRouter } from "next/router";
-import Header from "../components/Header";
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
+import { useRouter } from 'next/router';
 
-type Props = {};
+export default function Cancel() {
+   const router = useRouter();
+	return (
+		<section className="bg-white dark:bg-gray-900 ">
+			<div className="container flex items-center min-h-screen px-6 py-12 mx-auto">
+				<div className="flex flex-col items-center max-w-sm mx-auto text-center">
+					<p className="p-3 text-sm font-medium text-indigo-500 rounded-full bg-indigo-50 dark:bg-gray-800">
+						<CheckCircleIcon className="text-green-500 h-10" />
+					</p>
+					<h1 className="mt-3 text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">
+						Payment Successful
+					</h1>
+					<p className="mt-4 text-gray-500 dark:text-gray-400">
+						Hey, KiemTran! Thank you for purchasing Digital Artwork - Cosmic
+						Dreams at Gatelink! Your payment has been confirmed. For more
+						information:
+					</p>
 
-const success = (props: Props) => {
-  const router = useRouter();
-  return (
-    <div className="bg-gray-100 h-screen">
-      <Header />
+					<div className="flex items-center w-full mt-6 gap-x-3 shrink-0 sm:w-auto">
+						<button
+							onClick={() => router.push('/checkout')}
+							className="flex items-center justify-center w-1/2 px-5 py-2 text-sm text-gray-700 transition-colors duration-200 bg-white border rounded-lg gap-x-2 sm:w-auto dark:hover:bg-gray-800 dark:bg-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:border-gray-700"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								className="w-5 h-5 rtl:rotate-180"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
+								/>
+							</svg>
 
-      <main className="max-screen-lg mx-auto">
-        <div className="flex flex-col p-10 bg-white">
-          <div className="flex items-center space-x-2 mb-5">
-            <CheckCircleIcon className="text-green-500 h-10" />
-            <h1 className="text-3xl">
-              Thank you, your order has been confirmed!
-            </h1>
-          </div>
-          <p>
-            Thank you for shopping with us. We'll send a confirmation once your item has shipped, if you would like to check the status of your order(s) please press the link below.
-          </p>
-          <button onClick={()=>router.push("/orders")} className="button mt-8">Go to my orders</button>
-        </div>
-      </main>
-    </div>
-  );
-};
+							<span>Go back</span>
+						</button>
 
-export default success;
+						<button
+							onClick={() => router.push('/')}
+							className="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-indigo-500 rounded-lg shrink-0 sm:w-auto hover:bg-indigo-600 dark:hover:bg-indigo-500 dark:bg-indigo-600"
+						>
+							Take me home
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+}
