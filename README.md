@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github-readme-tech-stack.vercel.app">
+  <a href="https://gatelink.vercel.app">
     <img src="https://res.cloudinary.com/drh6sa2x5/image/upload/v1688110193/gatelink_rpls4z.png" alt="GitHub Readme Tech Stack" />
   </a>
 </div>
@@ -19,11 +19,17 @@
 
 <hr>
 
+## 🐧 Demo
+![Alt Text](https://s11.gifyu.com/images/SQ57S.gif)
+
+
+<hr>
+
 ## ⚡ Getting Started
 
 To run Gatelinks locally, follow these steps:
 
-1. Clone the repository: git clone https://github.com/VanKiem-Tran/gatelink.git
+1. Clone the repository: `git clone https://github.com/VanKiem-Tran/gatelink.git`
 
 2. Install dependencies: `cd gatelinks` and `npm install`
 
@@ -90,6 +96,80 @@ The project utilizes the following technologies and dependencies:
                                                               |
 
 </details>
+
+<hr>
+
+## How CandyPay Checkout SDK is being used
+
+In the Gatelinks website, the **CandyPay** is utilized to facilitate the payment process and enable seamless transactions for purchasing digital content.
+
+- Integration Setup: The **CandyPay** is included as a dependency in the project's package.json file. The specific version used is "@candypay/checkout-sdk" (version 0.1.56).
+
+- Importing the SDK and initializing the SDK: Within the codebase, the **CandyPay** is imported using the appropriate import statement or require statement, depending on the JavaScript module system in use.
+
+```sh
+import { CandyPay } from "@candypay/checkout-sdk";
+
+export const candypay = new CandyPay({
+	api_keys: {
+		public_api_key: process.env.CANDYPAY_PUBLIC_API_KEY,
+		private_api_key: process.env.CANDYPAY_PRIVATE_API_KEY,
+	},
+	network: 'devnet', // use 'mainnet' for prod and 'devnet' for dev environment
+	config: {
+		collect_shipping_address: false,
+	},
+});
+```
+
+- Creating a Payment: When a buyer selects an item for purchase on Gatelinks, the CandyPay Checkout SDK is used to create a payment object. This payment object includes details such as the item being purchased, the price, and any additional metadata.
+
+```sh
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  const { items } = req.body;
+  
+	try {
+		const response = await candypay.session.create({
+			success_url: `${process.env.STATIC_URL}/success`,
+			cancel_url: `${process.env.STATIC_URL}/cancel`,
+			tokens: ['dust', 'samo', 'shdw'],
+			items: [
+				{
+					name: item.title,
+					price: item.price,
+					image: item.image,
+					quantity: item.quantity,
+					size: item.size,
+				},
+			],
+			shipping_fees: item.shipping_fees,
+			metadata: {
+				customer_name: 'Kiem Tran',
+			},
+		});
+
+		return res.status(200).json(response);
+	} catch (error) {
+		console.log(error);
+		return res.status(500).json({
+			error: 'Error creating session',
+		});
+	}
+};
+
+```
+
+- Initiating the Checkout: After the payment object is created, the CandyPay Checkout SDK is invoked to initiate the checkout process. This typically involves displaying a checkout form or redirecting the user to a payment page hosted by CandyPay.
+<div align="center">
+  <a href="https://gatelink.vercel.app">
+    <img src="https://res.cloudinary.com/drh6sa2x5/image/upload/v1688121454/Screen_Shot_2023-06-30_at_17.36.19_vzbwpc.png" alt="GitHub Readme Tech Stack" />
+  </a>
+</div>
+
+- Handling Payment Events: During the checkout process, the CandyPay Checkout SDK emits various events to track the progress and outcome of the payment. These events can be captured and handled within the Gatelinks website to update the user interface, trigger appropriate actions, or display relevant messages.
+
+By incorporating the CandyPay, Gatelinks leverages its features and functionality to enable secure and efficient payment processing for the sale of digital content on the platform. This ensures a seamless and reliable purchasing experience for buyers and content creators alike.
+
 
 <hr>
 
