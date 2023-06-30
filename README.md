@@ -20,11 +20,7 @@
 <hr>
 
 ## 🐧 Demo
-<div align="center">
-  <a href="https://gatelink.vercel.app">
-    <img src="https://s11.gifyu.com/images/SQ57S.gif" alt="GitHub Readme Tech Stack" />
-  </a>
-</div>
+![Alt Text](https://s11.gifyu.com/images/SQ57S.gif)
 
 
 <hr>
