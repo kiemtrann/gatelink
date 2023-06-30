@@ -20,7 +20,11 @@
 <hr>
 
 ## 🐧 Demo
-![Alt Text](https://s11.gifyu.com/images/SQ57S.gif)
+<div align="center">
+  <a href="https://gatelink.vercel.app">
+    <img src="https://s11.gifyu.com/images/SQ57S.gif" alt="GitHub Readme Tech Stack" />
+  </a>
+</div>
 
 
 <hr>
@@ -29,7 +33,7 @@
 
 To run Gatelinks locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/VanKiem-Tran/gatelink.git`
+1. Clone the repository: git clone https://github.com/VanKiem-Tran/gatelink.git
 
 2. Install dependencies: `cd gatelinks` and `npm install`
 
